@@ -1,24 +1,18 @@
 package Lesson6;
 
 public class Animal {
-    protected String name;
-    protected int age;
+    public String name;
+    public int distance;
 
 
-    public void jump() {
+    public void runAnimals(int distance) {
 
-        System.out.println(name + "___прыгнул");
+        System.out.println(name + " пробежал" + " " + distance);
     }
 
-    public void info() {
-        System.out.println(name + " " + age);
-    }
-    public void voice() {
-        System.out.println(name + " издает какой-то звук");
-    }
-
-    protected int calculateAge() {
-        return age * 1;
+    public void swimAnimals(int distance) {
+        System.out.println(name + " проплыл" + " " + distance);
     }
 }
+
 

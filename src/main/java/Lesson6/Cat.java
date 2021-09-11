@@ -3,19 +3,16 @@ package Lesson6;
 public class Cat extends Animal {
 
 
-    public Cat(String name, int age) {
+    public Cat(String name) {
 
         this.name = name;
-        this.age = age;
+
+    }
+@Override
+        public void swimAnimals (int distance) {
+    System.out.println(name + "  не умеет плавать");
     }
 
-    public void info() {
-        System.out.println(name + " " + age + " ");
-    }
-    @Override
-    public void voice() {
-        System.out.println(name + " мяукает");
-    }
 
 }
 

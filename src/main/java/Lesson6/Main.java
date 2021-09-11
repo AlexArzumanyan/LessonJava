@@ -1,17 +1,27 @@
 package Lesson6;
 
+
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        Cat cat = new Cat("Barsik", 4);
-        cat.jump();
-        cat.info();
 
 
-        Dog dog = new Dog("Bobik", 2);
-        dog.jump();
-        dog.info();
+        Animal[] animals = {
+                new Cat("Luntik"),
+                new Dog("Bobik"),
+                new Cat("Mursik"),
+                new Cat("Barsik"),
+                new Dog("Bulbazavr")
 
-dog.voice();
-cat.voice();
+        };
+        for (int i = 0; i < animals.length; i++) {
+            animals[i].runAnimals(9);
+            animals[i].swimAnimals(18);
+        }
+
     }
+
 }
+
+
