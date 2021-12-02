@@ -8,11 +8,7 @@ import java.awt.event.ActionListener;
 public class GeekbrainsWindow extends JFrame {
     private int randomNubmer;
     private JTextField textField;
-
-
     public GeekbrainsWindow() {
-
-
         this.randomNubmer = (int) (Math.random() * 10) + 1;
         setTitle("Игра: Угадай число");
         setBounds(600, 300, 600, 160);
@@ -24,14 +20,11 @@ public class GeekbrainsWindow extends JFrame {
         textField.setText("Программа загадала число от 1 до 10");
         textField.setEditable(false);
         textField.setHorizontalAlignment(SwingConstants.CENTER);
-
         Font font = new Font("Arial", Font.PLAIN, 20);
         textField.setFont(font);
-
         JPanel buttonsPanel = new JPanel(new GridLayout(1, 10));
         buttonsPanel.setBackground(Color.BLUE);
         add(buttonsPanel, BorderLayout.CENTER);
-
         for (int i = 1; i <= 10; i++) {
             JButton button = new JButton(String.valueOf(i));
             button.setFont(font);
@@ -51,9 +44,10 @@ public class GeekbrainsWindow extends JFrame {
         buttonRepeat.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
-            }
-        });
+                randomNubmer = (int) (Math.random() * 10) + 1;
+textField.setText("Программа задала новое число");
+                }
+            });
 
 //
 //        JButton button1 = new JButton("1");
@@ -89,18 +83,18 @@ public class GeekbrainsWindow extends JFrame {
 //            }
 //        });
 
-        setVisible(true);
-    }
+            setVisible(true);
+        }
 
-    public void tryToAnswer(int answer) {
-        if (answer < randomNubmer) {
-            textField.setText("Не угадали! Загаданное число больше!");
-            return;
+        public void tryToAnswer ( int answer){
+            if (answer < randomNubmer) {
+                textField.setText("Не угадали! Загаданное число больше!");
+                return;
+            }
+            if (answer > randomNubmer) {
+                textField.setText("Не угадали! Загаданное число меньше!");
+                return;
+            }
+            textField.setText("Вы угадали!!! Ответ: " + randomNubmer);
         }
-        if (answer > randomNubmer) {
-            textField.setText("Не угадали! Загаданное число меньше!");
-            return;
-        }
-        textField.setText("Вы угадали!!! Ответ: " + randomNubmer);
     }
-}
